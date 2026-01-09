@@ -1,12 +1,13 @@
 from abc import ABC, abstractmethod
 
+#when we have if and else in business logic..
+
 #The "Algorithm" Blueprint (Interface)
 class ShippingStrategy(ABC):
     @abstractmethod
     def calculate_cost(self, weight):
         """All strategies must implement this method"""
         pass
-
 
 # The Concrete Strategies
 class FedExStrategy(ShippingStrategy):
@@ -18,6 +19,11 @@ class PostalStrategy(ShippingStrategy):
     def calculate_cost(self, weight):
         # Postal: No flat fee, just $1.5 per kg
         return weight * 1.5
+
+class UPSStrategy(ShippingStrategy):
+    def calculate_cost(self, weight):
+        # UPS: Flat $20 + $1.0 per kg
+        return 20 + (weight * 1.0)
 
 # The Context (The Order)
 class Order:
@@ -39,3 +45,7 @@ print(f"FedEx Shipping: ${my_order.shipping_fee()}")
 # Change strategy at runtime (User finds a cheaper option)
 my_order.strategy = PostalStrategy()
 print(f"Postal Shipping: ${my_order.shipping_fee()}")
+
+# Change strategy to UPS
+my_order.strategy = UPSStrategy()
+print(f"UPS Shipping: ${my_order.shipping_fee()}")
