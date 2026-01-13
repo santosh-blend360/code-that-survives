@@ -1,0 +1,39 @@
+ASSIGNMENT:
+
+Design a Mini Cab Booking System (like Uber/Ola) using object-oriented principles.
+
+The system should:
+
+Calculate ride fare based on distance.
+
+Support multiple pricing rules:
+
+Normal pricing (₹10/km)
+
+Surge pricing (₹25/km)
+
+Support multiple payment methods:
+
+UPI
+
+Card
+
+Wallet
+
+Add logging and authentication to the book_ride() operation without modifying its internal code.
+
+Maintain a single, shared application configuration containing:
+
+App name
+
+Currency symbol
+
+Design Requirements:
+
+Focus on clean design, extensibility, and low coupling.
+
+You may use any OOP language and relevant design patterns.
+
+Pricing strategy should be changeable at runtime.
+
+Payment logic should not be hardcoded in the booking flow.
