@@ -23,8 +23,8 @@ class AppSettings:
 settings1 = AppSettings()
 settings2 = AppSettings()
 
-# print(settings1 is settings2)
+print(settings1 is settings2)
 
 settings1.theme = "light"
 
-# print(settings2.theme) 
+print(settings2.theme) 
